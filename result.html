@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/logo.png">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <title>Quiz-App</title>
+</head>
+<body onload="showResult()">
+    <section id="QuizField" class="QuizField">
+    <nav id="navigationLeft" class="navigationLeft">
+        <img class="navLogo" src="./img/logo.png">
+        <a>HTML</a>
+        <a>CSS</a>
+        <a>JS</a>
+        <a>Java</a>
+    </nav>
+    
+        <div id="resultfield" class="resultfield">
+            <img class="brainResult" src="./img/brain result.png">
+            <h3 class="headline">COMPLETE <br>HTML QUIZ</h3>
+            <div id="scoreContainer" class="scoreContainer">
+                <div class="score">YOUR SCORE</div>
+                <div class="scoreNo"><div id="correctAnswers"></div> / <div id="maxCorrectAnswers"></div></div>
+            </div>
+            <div class="resultButtons">
+                <button class="shareButton">SHARE</button>
+                    <button id="replayButton" class="replayButton" onclick="backToIndex()">REPLAY</button>
+            </div>
+        </div>
+    </section>
+    <img class="tropy" src="./img/tropy.png">
+</body>
+</html>

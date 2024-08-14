@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/logo.png">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <title>Quiz-App</title>
+</head>
+<body onload="loadTypOfQuestions(), showquestion(), resetLocalStorage(), setgame(), TypOfQuiz()">
+    <section id="QuizField" class="QuizField">
+    <nav id="navigationLeft" class="navigationLeft">
+        <img class="navLogo" src="./img/logo.png" onclick="openErrorWindowNav()">
+        <a id="nav1" onclick="checkForNavHover()" class="navbarLink">HTML</a>
+        <a id="nav2" onclick="checkForNavHover()" class="navbarLink">CSS</a>
+        <a id="nav3" onclick="checkForNavHover()" class="navbarLink">JS</a>
+        <a id="nav4" onclick="checkForNavHover()" class="navbarLink">Java</a>
+    </nav>
+       <div id="matchfield" class="matchfield">
+            <div id="cover" class="cover1">
+                        <div id="ProgressArea" class="ProgressArea">
+                            <div id="newProgressbar" class="newprogress" style="width:0%">0%</div> 
+                        </div>
+                            <div id="questions" class="questions">
+                    <h1 id="question" class="question"></h1>
+                </div>
+                <div id="answers" class="answers">
+                    <div id="answer1" class="answer" onclick="selectAnswer(1)"><div id="Letter1" class="letter">A</div></div>
+                    <div id="answer2" class="answer" onclick="selectAnswer(2)"><div id="Letter2" class="letter">B</div></div>
+                    <div id="answer3" class="answer" onclick="selectAnswer(3)"><div id="Letter3" class="letter">C</div></div>
+                    <div id="answer4" class="answer" onclick="selectAnswer(4)"><div id="Letter4" class="letter">D</div></div>
+                </div>
+                <div id="resultfield" class="resultfield d-none">
+                    <img class="brainResult" src="./img/brain result.png">
+                    <h3 class="headline">COMPLETE <br>HTML QUIZ</h3>
+                    <div id="scoreContainer" class="scoreContainer d-none">
+                        <div id="score" class="score d-none">YOUR SCORE</div>
+                        <div id="scoreNo" class="scoreNo d-none"><div id="correctAnswers" class="d-none"></div> / <div id="maxCorrectAnswers" class="d-none"></div></div>
+                    </div>
+                    <div id="resultButtons" class="resultButtons d-none">
+                        <button id="shareButton" class="shareButton d-none"><a id="mail" href="mailto:?subject=Mein%20Ergebnis&body=Hey!%0A%0AIch habe bei dem " onclick="return sendmail();">SHARE</a></button>
+                        <button id="replayButton" class="replayButton d-none" onclick="backToIndex()">REPLAY</button>
+                    </div>
+                    <img class="tropy" src="./img/tropy.png">
+                </div>
+            </div>
+            <section id="noCategoryChoosenSection" class="noCategoryChoosenSection d-none">
+                <div id="noCategoryChoosen" class="noCategoryChoosen">
+                    <p>Bitte wähle zuerst eine Fragenkateorie aus!</p>
+                    <form action="index.html">
+                        <button class="errorWindowButton"> OK </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="errorBackgroundNav" class="errorBackground d-none">
+        <div id="errorWindowNav" class="errorWindowNav d-none">
+            <div id="errorMessageNav" class="errorMessage">
+                Sie befinden sich in einem laufenden Spiel..
+            </div>
+            <div class="errorWindowNavButtons">
+                <button class="errorWindowButton errorWindowNavButton" onclick="continueGame()"> Spiel fortsetzen </button>
+                <button class="errorWindowButton errorWindowNavButton" onclick="stopGame()"> Spiel abbrechen </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="backAndForward" class="backAndForward">
+        <div id="previousQuestionButton" class="arrowImg"  onclick="previousquestion()"><img src="./img/arrowback.png"></div>
+        <div id="nextQuestionButton" class="arrowImg" onclick="nextquestion()"><img src="./img/arrowForward.png"></div>
+    </section>
+    <section id="errorBackground" class="errorBackground d-none">
+        <div id="errorWindow" class="d-none">
+            <div id="errorMessage" class="errorMessage">
+                
+            </div>
+            <button class="errorWindowButton" onclick="closeErrorWindow()"> OK </button>
+        </div>
+    </section>
+</body>
+</html>

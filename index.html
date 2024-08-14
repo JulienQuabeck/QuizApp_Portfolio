@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/logo.png">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <title>Quiz-App</title>
+</head>
+<body onload="deleteLocalStorage(), resetNavlock()">
+    <section id="QuizField" class="QuizField">
+    <nav id="navigationLeft" class="navigationLeft">
+        <img class="navLogo" src="./img/logo.png">
+        <a id="nav1" onclick="navlock(1), saveTypOfQuestionsInLS(1)" class="navbarLink">HTML</a>
+        <a id="nav2" onclick="navlock(2), saveTypOfQuestionsInLS(2)" class="navbarLink">CSS</a>
+        <a id="nav3" onclick="navlock(3), saveTypOfQuestionsInLS(3)" class="navbarLink">JS</a>
+        <a id="nav4" onclick="navlock(4), saveTypOfQuestionsInLS(4)" class="navbarLink">Java</a>
+    </nav>
+    <div id="rightContainer" class="rightContainer">
+        <div id="headlines" class="headlines">
+            <h2>Welcome to <br>The Awesome HTML Quiz</h2>
+            <h4>Ready for the Challenge?</h4>
+            <div id="btnStart" class="btnStart">
+                <form action="questions.html">
+                    <button class="startButton">START NOW<img src="./img/next.png"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </section>
+</body>
+</html>
